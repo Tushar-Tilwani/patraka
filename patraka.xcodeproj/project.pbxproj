@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		3380CF741CD2D9C6009640DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380CF731CD2D9C6009640DB /* AppDelegate.swift */; };
-		3380CF761CD2D9C6009640DB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380CF751CD2D9C6009640DB /* FirstViewController.swift */; };
 		3380CF7B1CD2D9C6009640DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3380CF791CD2D9C6009640DB /* Main.storyboard */; };
 		3380CF7D1CD2D9C6009640DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3380CF7C1CD2D9C6009640DB /* Assets.xcassets */; };
 		3380CF801CD2D9C6009640DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3380CF7E1CD2D9C6009640DB /* LaunchScreen.storyboard */; };
 		3380CF881CD2DC16009640DB /* BookTicketsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380CF871CD2DC16009640DB /* BookTicketsTableVC.swift */; };
+		3380CF8B1CD2E2CD009640DB /* UseTicketsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380CF8A1CD2E2CD009640DB /* UseTicketsTableVC.swift */; };
+		3380CF8E1CD2E2FF009640DB /* tickets.json in Resources */ = {isa = PBXBuildFile; fileRef = 3380CF8D1CD2E2FF009640DB /* tickets.json */; };
+		3380CF901CD2E35A009640DB /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380CF8F1CD2E35A009640DB /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3380CF701CD2D9C6009640DB /* patraka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = patraka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3380CF731CD2D9C6009640DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3380CF751CD2D9C6009640DB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		3380CF7A1CD2D9C6009640DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3380CF7C1CD2D9C6009640DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3380CF7F1CD2D9C6009640DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3380CF811CD2D9C6009640DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3380CF871CD2DC16009640DB /* BookTicketsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTicketsTableVC.swift; sourceTree = "<group>"; };
+		3380CF8A1CD2E2CD009640DB /* UseTicketsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseTicketsTableVC.swift; sourceTree = "<group>"; };
+		3380CF8D1CD2E2FF009640DB /* tickets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tickets.json; sourceTree = "<group>"; };
+		3380CF8F1CD2E35A009640DB /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,33 @@
 		3380CF721CD2D9C6009640DB /* patraka */ = {
 			isa = PBXGroup;
 			children = (
+				3380CF8C1CD2E2D9009640DB /* temp */,
+				3380CF891CD2E2A8009640DB /* Controllers */,
 				3380CF731CD2D9C6009640DB /* AppDelegate.swift */,
-				3380CF751CD2D9C6009640DB /* FirstViewController.swift */,
 				3380CF791CD2D9C6009640DB /* Main.storyboard */,
 				3380CF7C1CD2D9C6009640DB /* Assets.xcassets */,
 				3380CF7E1CD2D9C6009640DB /* LaunchScreen.storyboard */,
 				3380CF811CD2D9C6009640DB /* Info.plist */,
-				3380CF871CD2DC16009640DB /* BookTicketsTableVC.swift */,
 			);
 			path = patraka;
+			sourceTree = "<group>";
+		};
+		3380CF891CD2E2A8009640DB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3380CF871CD2DC16009640DB /* BookTicketsTableVC.swift */,
+				3380CF8A1CD2E2CD009640DB /* UseTicketsTableVC.swift */,
+				3380CF8F1CD2E35A009640DB /* HomeVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3380CF8C1CD2E2D9009640DB /* temp */ = {
+			isa = PBXGroup;
+			children = (
+				3380CF8D1CD2E2FF009640DB /* tickets.json */,
+			);
+			name = temp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +151,7 @@
 				3380CF801CD2D9C6009640DB /* LaunchScreen.storyboard in Resources */,
 				3380CF7D1CD2D9C6009640DB /* Assets.xcassets in Resources */,
 				3380CF7B1CD2D9C6009640DB /* Main.storyboard in Resources */,
+				3380CF8E1CD2E2FF009640DB /* tickets.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,8 +163,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3380CF881CD2DC16009640DB /* BookTicketsTableVC.swift in Sources */,
+				3380CF901CD2E35A009640DB /* HomeVC.swift in Sources */,
 				3380CF741CD2D9C6009640DB /* AppDelegate.swift in Sources */,
-				3380CF761CD2D9C6009640DB /* FirstViewController.swift in Sources */,
+				3380CF8B1CD2E2CD009640DB /* UseTicketsTableVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,10 +280,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = patraka/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tilwani.patraka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -267,10 +294,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = patraka/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tilwani.patraka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
