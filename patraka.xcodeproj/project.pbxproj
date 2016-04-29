@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		3380CF741CD2D9C6009640DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380CF731CD2D9C6009640DB /* AppDelegate.swift */; };
 		3380CF761CD2D9C6009640DB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380CF751CD2D9C6009640DB /* FirstViewController.swift */; };
-		3380CF781CD2D9C6009640DB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380CF771CD2D9C6009640DB /* SecondViewController.swift */; };
 		3380CF7B1CD2D9C6009640DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3380CF791CD2D9C6009640DB /* Main.storyboard */; };
 		3380CF7D1CD2D9C6009640DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3380CF7C1CD2D9C6009640DB /* Assets.xcassets */; };
 		3380CF801CD2D9C6009640DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3380CF7E1CD2D9C6009640DB /* LaunchScreen.storyboard */; };
+		3380CF881CD2DC16009640DB /* BookTicketsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380CF871CD2DC16009640DB /* BookTicketsTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3380CF701CD2D9C6009640DB /* patraka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = patraka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3380CF731CD2D9C6009640DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3380CF751CD2D9C6009640DB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		3380CF771CD2D9C6009640DB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3380CF7A1CD2D9C6009640DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3380CF7C1CD2D9C6009640DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3380CF7F1CD2D9C6009640DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3380CF811CD2D9C6009640DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3380CF871CD2DC16009640DB /* BookTicketsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTicketsTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +58,11 @@
 			children = (
 				3380CF731CD2D9C6009640DB /* AppDelegate.swift */,
 				3380CF751CD2D9C6009640DB /* FirstViewController.swift */,
-				3380CF771CD2D9C6009640DB /* SecondViewController.swift */,
 				3380CF791CD2D9C6009640DB /* Main.storyboard */,
 				3380CF7C1CD2D9C6009640DB /* Assets.xcassets */,
 				3380CF7E1CD2D9C6009640DB /* LaunchScreen.storyboard */,
 				3380CF811CD2D9C6009640DB /* Info.plist */,
+				3380CF871CD2DC16009640DB /* BookTicketsTableVC.swift */,
 			);
 			path = patraka;
 			sourceTree = "<group>";
@@ -139,7 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3380CF781CD2D9C6009640DB /* SecondViewController.swift in Sources */,
+				3380CF881CD2DC16009640DB /* BookTicketsTableVC.swift in Sources */,
 				3380CF741CD2D9C6009640DB /* AppDelegate.swift in Sources */,
 				3380CF761CD2D9C6009640DB /* FirstViewController.swift in Sources */,
 			);
