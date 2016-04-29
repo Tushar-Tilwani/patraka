@@ -16,6 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if let path = NSBundle.mainBundle().pathForResource("tickets", ofType: "json") {
+            if let data = NSData(contentsOfFile: path) {
+                let json = JSON(data: data, options: NSJSONReadingOptions.AllowFragments, error: nil)
+                print("jsonData:\(json[0]["ticketCode"]) \n")
+            }
+        }
+        
         return true
     }
 
