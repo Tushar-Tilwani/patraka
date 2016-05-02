@@ -1,0 +1,52 @@
+[{
+	"companyName": "abc",
+	"type": "Entertainment",
+	"location": {
+		"lat": "",
+		"lon": ""
+	},
+	"dates": [{
+		"ft": 0,
+		"ticketsAvailable": 12
+	}, {
+		"ft": 1,
+		"ticketsAvailable": 24
+	}, {
+		"ft": 2,
+		"ticketsAvailable": 24
+	}]
+}, {
+	"companyName": "xyz",
+	"type": "Parking",
+	"location": {
+		"lat": "",
+		"lon": ""
+	},
+	"dates": [{
+		"ft": 0,
+		"ticketsAvailable": 12
+	}, {
+		"ft": 1,
+		"ticketsAvailable": 32
+	}, {
+		"ft": 2,
+		"ticketsAvailable": 36
+	}]
+}, {
+	"companyName": "ttt",
+	"type": "Transportation",
+	"location": {
+		"lat": "",
+		"lon": ""
+	},
+	"dates": [{
+		"ft": 0,
+		"ticketsAvailable": 12
+	}, {
+		"ft": 1,
+		"ticketsAvailable": 32
+	}, {
+		"ft": 2,
+		"ticketsAvailable": 36
+	}]
+}]
