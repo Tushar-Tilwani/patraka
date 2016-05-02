@@ -9,6 +9,8 @@
 import UIKit
 
 class VendorDetailTableVC: UITableViewController {
+    
+    var vendor: JSON?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,24 +31,59 @@ class VendorDetailTableVC: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 6
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
+    
+        let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "reuseIdentifier")
+        
+        
+        switch indexPath.section {
+        case 0:
+            cell.accessoryType = .DisclosureIndicator
+            cell.textLabel?.text = "BOOK TICKETS"
+        case 1:
+           cell.textLabel?.text = self.vendor![Constants.vendorName].string
+           //cell.detailTextLabel?.text = self.vendor![Constants.vendorLocation].string
+        case 2:
+            cell.textLabel?.text = "Description"
+        case 3:
+            cell.textLabel?.text = "Show on Map"
+        case 4:
+            cell.textLabel?.text = "Get Direction"
+        case 5:
+            cell.textLabel?.text = "Visit Website"
+            
+        default:
+            break
+        }
+        
+        // Configure the cell...*/
 
         return cell
     }
-    */
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.section {
+        case 0:
+            let detailVC =  BuyTicketDetailTableVC(style: .Grouped)
+            detailVC.title = title
+            detailVC.vendor = vendor
+            navigationController?.pushViewController(detailVC, animated: true)
+
+            
+        default:
+            break
+        }
+        
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

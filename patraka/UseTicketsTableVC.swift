@@ -9,7 +9,9 @@
 import UIKit
 
 class UseTicketsTableVC: UITableViewController {
+    var tickets: JSON? = []
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,9 @@ class UseTicketsTableVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    override func viewDidAppear(animated: Bool) {
+        populateTickets()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +34,23 @@ class UseTicketsTableVC: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return tickets!.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("ticketCell", forIndexPath: indexPath)
+        let ticket = tickets?[indexPath.row]
+        cell.textLabel?.text = ticket?["companyName"].string
+        cell.detailTextLabel?.text = ticket?["date"].string
+        
         return cell
-    }
-    */
+    } 
 
     /*
     // Override to support conditional editing of the table view.
@@ -91,5 +96,27 @@ class UseTicketsTableVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func beforeLoad(){
+        activityIndicator.hidden = false
+        activityIndicator.startAnimating()
+    }
+    func afterLoad(){
+        activityIndicator.stopAnimating()
+        activityIndicator.hidden = true
+
+    }
+    func populateTickets(){
+       beforeLoad()
+        if let path = NSBundle.mainBundle().pathForResource("tickets", ofType: "json") {
+            if let data = NSData(contentsOfFile: path) {
+                tickets = JSON(data: data, options: NSJSONReadingOptions.AllowFragments, error: nil)
+                print(tickets!.count)
+                tableView.reloadData()
+                afterLoad()
+                
+            }
+        }
+        
+    }
 
 }

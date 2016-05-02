@@ -1,13 +1,13 @@
 [{
 	"ticketId":"abc",
-	"companyName":"abc",
+	"companyName":"Company ABC",
 	"ticketCode":"abc",
-	"date":""
+	"date":"20-01-2016"
 },
 {
 	"ticketId":"xyz",
-	"companyName":"xyz",
+	"companyName":"Company XYZ",
 	"ticketCode":"xyz",
-	"date":""
+	"date":"22-01-2016"
 	
 }]

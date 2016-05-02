@@ -6,4 +6,8 @@
 //  Copyright © 2016 Tushar Tilwani. All rights reserved.
 //
 
-import Foundation
+struct Constants {
+    static let vendorName = "companyName"
+    static let vendorLocation = "vendorLocation"
+    
+}
