@@ -28,6 +28,11 @@
 		3380CF901CD2E35A009640DB /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380CF8F1CD2E35A009640DB /* HomeVC.swift */; };
 		3380CF921CD2EB98009640DB /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380CF911CD2EB98009640DB /* SwiftyJSON.swift */; };
 		3380CF941CD32035009640DB /* vendors.json in Resources */ = {isa = PBXBuildFile; fileRef = 3380CF931CD32035009640DB /* vendors.json */; };
+		33E501891CDC275D007F9BE9 /* about_us.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E501841CDC275D007F9BE9 /* about_us.png */; };
+		33E5018A1CDC275D007F9BE9 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E501851CDC275D007F9BE9 /* share.png */; };
+		33E5018B1CDC275D007F9BE9 /* use.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E501861CDC275D007F9BE9 /* use.png */; };
+		33E5018C1CDC275D007F9BE9 /* buy.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E501871CDC275D007F9BE9 /* buy.png */; };
+		33E5018D1CDC275D007F9BE9 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E501881CDC275D007F9BE9 /* home.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +59,11 @@
 		3380CF8F1CD2E35A009640DB /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3380CF911CD2EB98009640DB /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		3380CF931CD32035009640DB /* vendors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vendors.json; sourceTree = "<group>"; };
+		33E501841CDC275D007F9BE9 /* about_us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_us.png; sourceTree = "<group>"; };
+		33E501851CDC275D007F9BE9 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		33E501861CDC275D007F9BE9 /* use.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = use.png; sourceTree = "<group>"; };
+		33E501871CDC275D007F9BE9 /* buy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buy.png; sourceTree = "<group>"; };
+		33E501881CDC275D007F9BE9 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +133,7 @@
 		3380CF721CD2D9C6009640DB /* patraka */ = {
 			isa = PBXGroup;
 			children = (
+				33E501831CDC2741007F9BE9 /* assets */,
 				33186FE91CD443E9005997A9 /* libs */,
 				33186FD31CD41E7A005997A9 /* Views */,
 				3380CF8C1CD2E2D9009640DB /* temp */,
@@ -158,6 +169,18 @@
 				3380CF8D1CD2E2FF009640DB /* tickets.json */,
 			);
 			name = temp;
+			sourceTree = "<group>";
+		};
+		33E501831CDC2741007F9BE9 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				33E501841CDC275D007F9BE9 /* about_us.png */,
+				33E501851CDC275D007F9BE9 /* share.png */,
+				33E501861CDC275D007F9BE9 /* use.png */,
+				33E501871CDC275D007F9BE9 /* buy.png */,
+				33E501881CDC275D007F9BE9 /* home.png */,
+			);
+			name = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,11 +244,16 @@
 			files = (
 				3380CF801CD2D9C6009640DB /* LaunchScreen.storyboard in Resources */,
 				3314252D1CD6F1F20057DC8E /* FinalBookTicketVC.xib in Resources */,
+				33E5018D1CDC275D007F9BE9 /* home.png in Resources */,
 				3380CF7D1CD2D9C6009640DB /* Assets.xcassets in Resources */,
+				33E5018B1CDC275D007F9BE9 /* use.png in Resources */,
+				33E501891CDC275D007F9BE9 /* about_us.png in Resources */,
+				33E5018A1CDC275D007F9BE9 /* share.png in Resources */,
 				3380CF941CD32035009640DB /* vendors.json in Resources */,
 				33186FD71CD42AF0005997A9 /* DateCell.xib in Resources */,
 				33186FDB1CD42EB8005997A9 /* BuyCell.xib in Resources */,
 				3380CF7B1CD2D9C6009640DB /* Main.storyboard in Resources */,
+				33E5018C1CDC275D007F9BE9 /* buy.png in Resources */,
 				3380CF8E1CD2E2FF009640DB /* tickets.json in Resources */,
 				33186FD91CD42D76005997A9 /* QuantityCell.xib in Resources */,
 			);

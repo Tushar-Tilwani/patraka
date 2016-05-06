@@ -39,7 +39,7 @@
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home.png" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,7 +58,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About Us" id="tCG-Dp-sT4"/>
+                    <tabBarItem key="tabBarItem" title="About Us" image="about_us.png" id="tCG-Dp-sT4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUx-mx-pce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,7 +141,7 @@
         <scene sceneID="Vtj-QK-Ouo">
             <objects>
                 <navigationController id="stO-rC-miI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Use Tickets" id="yvq-9H-wBU"/>
+                    <tabBarItem key="tabBarItem" title="Use Tickets" image="use.png" id="yvq-9H-wBU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dgb-Bb-2KE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -203,7 +203,7 @@
         <scene sceneID="i5h-Ma-m0A">
             <objects>
                 <navigationController id="tLw-5D-2MZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Book Tickets" id="gaN-LY-D8x"/>
+                    <tabBarItem key="tabBarItem" title="Book Tickets" image="buy.png" id="gaN-LY-D8x"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h8m-n0-FVj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -218,6 +218,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="about_us.png" width="30" height="30"/>
+        <image name="buy.png" width="30" height="30"/>
+        <image name="home.png" width="30" height="30"/>
+        <image name="use.png" width="30" height="30"/>
     </resources>
 </document>
