@@ -72,16 +72,19 @@ class BookTicketsTableVC: UITableViewController {
         
     }
     func populateVendors(){
-        beforeLoad()
-        if let path = NSBundle.mainBundle().pathForResource("vendors", ofType: "json") {
-            if let data = NSData(contentsOfFile: path) {
-                vendors = JSON(data: data, options: NSJSONReadingOptions.AllowFragments, error: nil)
-                print(vendors!.count)
-                tableView.reloadData()
-                afterLoad()
+        
+        let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: "http://129.21.113.228:3000/dummy_vendors")!, completionHandler: { (data, response, error) -> Void in
+            do{
+               
+                self.vendors = JSON(data: data!)
+                self.tableView.reloadData()
                 
             }
-        }
+            catch {
+                print("json error: \(error)")
+            }
+        })
+        task.resume()
         
     }
     
