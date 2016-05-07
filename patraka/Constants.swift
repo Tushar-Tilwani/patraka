@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 struct Constants {
     static let vendorName = "companyName"
@@ -27,5 +28,6 @@ struct Constants {
         let data = NSData(contentsOfURL : url!)
         return UIImage(data: data!)
     }
+    
     
 }
