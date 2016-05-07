@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "patraka/BookTicketsTableVC.swift"
-            timestampString = "484191864.005105"
+            timestampString = "484285315.009492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "populateVendors()"
             landmarkType = "5">
          </BreakpointContent>

@@ -13,8 +13,11 @@ class BookTicketsTableVC: UITableViewController {
     var vendors: JSON? = []
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        beforeLoad()
+        populateVendors()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -23,7 +26,8 @@ class BookTicketsTableVC: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     override func viewDidAppear(animated: Bool) {
-        populateVendors();
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -50,6 +54,20 @@ class BookTicketsTableVC: UITableViewController {
         cell.textLabel?.text = vendor?["companyName"].string
         cell.detailTextLabel?.text = vendor?["type"].string
         
+        var imageStr : String? =  vendor?["image"].string
+        
+        if(imageStr == nil){
+            imageStr = "default.jpg"
+        }
+        
+        cell.imageView?.frame = CGRectMake(0,0, 50, 50)
+        
+        let urlString = Constants.imageDomain + imageStr!
+        let url = NSURL(string: ("\(urlString)"))
+        let data = NSData(contentsOfURL : url!)
+        let image = UIImage(data: data!)
+        cell.imageView?.image = image
+        
         return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -63,24 +81,23 @@ class BookTicketsTableVC: UITableViewController {
     }
     
     func beforeLoad(){
-        //        activityIndicator.hidden = false
-        //        activityIndicator.startAnimating()
+        activityIndicator.hidden = false
+        activityIndicator.startAnimating()
     }
     func afterLoad(){
-        //        activityIndicator.stopAnimating()
-        //        activityIndicator.hidden = true
-        
+        self.tableView.reloadData()
+        activityIndicator.stopAnimating()
+        activityIndicator.hidden = true
     }
     func populateVendors(){
+        let url = "\(Constants.domain)dummy_vendors"
+        print(url)
         
-        let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: "http://129.21.113.228:3000/dummy_vendors")!, completionHandler: { (data, response, error) -> Void in
+        let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: url)!, completionHandler: { (data, response, error) -> Void in
             do{
-               
                 self.vendors = JSON(data: data!)
-                self.tableView.reloadData()
-                
-            }
-            catch {
+                self.afterLoad()
+            } catch {
                 print("json error: \(error)")
             }
         })

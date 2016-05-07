@@ -53,14 +53,13 @@ class VendorDetailTableVC: UITableViewController {
            cell.textLabel?.text = self.vendor![Constants.vendorName].string
            //cell.detailTextLabel?.text = self.vendor![Constants.vendorLocation].string
         case 2:
-            cell.textLabel?.text = "Description"
+            cell.textLabel?.text = self.vendor![Constants.address].string
         case 3:
             cell.textLabel?.text = "Show on Map"
         case 4:
             cell.textLabel?.text = "Get Direction"
         case 5:
             cell.textLabel?.text = "Visit Website"
-            
         default:
             break
         }
