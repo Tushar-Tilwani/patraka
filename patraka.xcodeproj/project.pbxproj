@@ -18,6 +18,7 @@
 		33186FDF1CD42F57005997A9 /* QuantityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33186FDE1CD42F57005997A9 /* QuantityCell.swift */; };
 		33186FE11CD42F75005997A9 /* BuyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33186FE01CD42F75005997A9 /* BuyCell.swift */; };
 		33186FE31CD43800005997A9 /* BuyTicketDetailTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33186FE21CD43800005997A9 /* BuyTicketDetailTableVC.swift */; };
+		332CA1751CDDB4A8008BE828 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 332CA1741CDDB4A8008BE828 /* video.mp4 */; };
 		3380CF741CD2D9C6009640DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380CF731CD2D9C6009640DB /* AppDelegate.swift */; };
 		3380CF7B1CD2D9C6009640DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3380CF791CD2D9C6009640DB /* Main.storyboard */; };
 		3380CF7D1CD2D9C6009640DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3380CF7C1CD2D9C6009640DB /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		33186FDE1CD42F57005997A9 /* QuantityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuantityCell.swift; sourceTree = "<group>"; };
 		33186FE01CD42F75005997A9 /* BuyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCell.swift; sourceTree = "<group>"; };
 		33186FE21CD43800005997A9 /* BuyTicketDetailTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyTicketDetailTableVC.swift; sourceTree = "<group>"; };
+		332CA1741CDDB4A8008BE828 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video.mp4; path = ../video.mp4; sourceTree = "<group>"; };
 		3380CF701CD2D9C6009640DB /* patraka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = patraka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3380CF731CD2D9C6009640DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3380CF7A1CD2D9C6009640DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		3380CF721CD2D9C6009640DB /* patraka */ = {
 			isa = PBXGroup;
 			children = (
+				332CA1741CDDB4A8008BE828 /* video.mp4 */,
 				33E501831CDC2741007F9BE9 /* assets */,
 				33186FE91CD443E9005997A9 /* libs */,
 				33186FD31CD41E7A005997A9 /* Views */,
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3380CF801CD2D9C6009640DB /* LaunchScreen.storyboard in Resources */,
+				332CA1751CDDB4A8008BE828 /* video.mp4 in Resources */,
 				3314252D1CD6F1F20057DC8E /* FinalBookTicketVC.xib in Resources */,
 				33E5018D1CDC275D007F9BE9 /* home.png in Resources */,
 				3380CF7D1CD2D9C6009640DB /* Assets.xcassets in Resources */,

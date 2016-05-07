@@ -16,7 +16,6 @@ class BookTicketsTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        beforeLoad()
         populateVendors()
         
         // Uncomment the following line to preserve selection between presentations
@@ -54,19 +53,17 @@ class BookTicketsTableVC: UITableViewController {
         cell.textLabel?.text = vendor?["companyName"].string
         cell.detailTextLabel?.text = vendor?["type"].string
         
-        var imageStr : String? =  vendor?["image"].string
+        /*var imageStr : String? =  vendor?["image"].string
         
         if(imageStr == nil){
             imageStr = "default.jpg"
         }
         
-        cell.imageView?.frame = CGRectMake(0,0, 50, 50)
-        
         let urlString = Constants.imageDomain + imageStr!
         let url = NSURL(string: ("\(urlString)"))
         let data = NSData(contentsOfURL : url!)
-        let image = UIImage(data: data!)
-        cell.imageView?.image = image
+        let image = UIImage(data: data!)*/
+        cell.imageView?.image =  Constants.getImage(vendor?["image"].string)
         
         return cell
     }
@@ -89,16 +86,30 @@ class BookTicketsTableVC: UITableViewController {
         activityIndicator.stopAnimating()
         activityIndicator.hidden = true
     }
+    
+    func showAlert(msg: String){
+        let alertController = UIAlertController(title: "Error", message:
+            msg, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     func populateVendors(){
+        beforeLoad()
         let url = "\(Constants.domain)dummy_vendors"
         print(url)
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: url)!, completionHandler: { (data, response, error) -> Void in
             do{
-                self.vendors = JSON(data: data!)
-                self.afterLoad()
-            } catch {
-                print("json error: \(error)")
+                if(data != nil){
+                    self.vendors = JSON(data: data!)
+                    self.afterLoad()
+                } else {
+                    self.showAlert("No Internet Connection!")
+                    self.afterLoad()
+                }
+                
             }
         })
         task.resume()

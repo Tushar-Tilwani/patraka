@@ -50,7 +50,8 @@ class VendorDetailTableVC: UITableViewController {
             cell.accessoryType = .DisclosureIndicator
             cell.textLabel?.text = "BOOK TICKETS"
         case 1:
-           cell.textLabel?.text = self.vendor![Constants.vendorName].string
+            cell.imageView?.image = Constants.getImage(vendor?["image"].string)
+           //cell.textLabel?.text = self.vendor![Constants.vendorName].string
            //cell.detailTextLabel?.text = self.vendor![Constants.vendorLocation].string
         case 2:
             cell.textLabel?.text = self.vendor![Constants.address].string
