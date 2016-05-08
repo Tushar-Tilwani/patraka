@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class UseTicketsTableVC: UITableViewController {
     var tickets: JSON? = []
@@ -46,8 +47,12 @@ class UseTicketsTableVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ticketCell", forIndexPath: indexPath)
         let ticket = tickets?[indexPath.row]
-        cell.textLabel?.text = ticket?["companyName"].string
-        cell.detailTextLabel?.text = ticket?["date"].string
+        cell.textLabel?.text = ticket?[Constants.vendorName].string
+        
+        let date = ticket?[Constants.dateAlias].string
+        let quanity = ticket?[Constants.quanity].string
+        
+        cell.detailTextLabel?.text =  "\(date!) | \(quanity!) Tickets"
         
         return cell
     } 
@@ -107,7 +112,23 @@ class UseTicketsTableVC: UITableViewController {
     }
     func populateTickets(){
        beforeLoad()
-        if let path = NSBundle.mainBundle().pathForResource("tickets", ofType: "json") {
+        Alamofire.request(.GET, "\(Constants.domain)tickets")
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let json = response.result.value {
+                    self.tickets = JSON(json)
+                    self.tableView.reloadData()
+                    self.afterLoad()
+                    print("JSON: \(json)")
+                }
+                
+        }
+        
+        /*if let path = NSBundle.mainBundle().pathForResource("tickets", ofType: "json") {
             if let data = NSData(contentsOfFile: path) {
                 tickets = JSON(data: data, options: NSJSONReadingOptions.AllowFragments, error: nil)
                 print(tickets!.count)
@@ -115,7 +136,7 @@ class UseTicketsTableVC: UITableViewController {
                 afterLoad()
                 
             }
-        }
+        }*/
         
     }
 

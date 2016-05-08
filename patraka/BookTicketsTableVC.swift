@@ -71,7 +71,7 @@ class BookTicketsTableVC: UITableViewController {
         let vendor = vendors![indexPath.row]
         
         let detailVC =  VendorDetailTableVC(style: .Grouped)
-        detailVC.title = vendor["companyName"].string
+        detailVC.title = vendor[Constants.vendorName].string
         detailVC.vendor = vendor
         
         navigationController?.pushViewController(detailVC, animated: true)

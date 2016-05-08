@@ -12,6 +12,8 @@ class QuantityCell: UITableViewCell,UIPickerViewDataSource,UIPickerViewDelegate 
 
     @IBOutlet weak var quantityPicker: UIPickerView!
     
+    var parentTableVC: BuyTicketDetailTableVC? = nil
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -36,7 +38,7 @@ class QuantityCell: UITableViewCell,UIPickerViewDataSource,UIPickerViewDelegate 
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+        parentTableVC?.quantity = String(row+1)
     }
 
 

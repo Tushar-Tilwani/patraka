@@ -12,6 +12,8 @@ import Alamofire
 class BuyTicketDetailTableVC: UITableViewController {
     
     var vendor: JSON?
+    var date: String = Constants.getDateFormatter().stringFromDate(NSDate())
+    var quantity: String = "1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,9 +51,13 @@ class BuyTicketDetailTableVC: UITableViewController {
         var cell:UITableViewCell?
         switch indexPath.section {
         case 0:
-            cell = tableView.dequeueReusableCellWithIdentifier("dateCell", forIndexPath: indexPath) as! DateCell
+            let dcell = tableView.dequeueReusableCellWithIdentifier("dateCell", forIndexPath: indexPath) as! DateCell
+            dcell.parentTableVC = self
+            cell = dcell
         case 1:
-            cell = tableView.dequeueReusableCellWithIdentifier("quantityCell", forIndexPath: indexPath) as! QuantityCell
+            let qcell = tableView.dequeueReusableCellWithIdentifier("quantityCell", forIndexPath: indexPath) as! QuantityCell
+            qcell.parentTableVC = self
+            cell = qcell
         case 2:
             let buyCell = tableView.dequeueReusableCellWithIdentifier("buyCell", forIndexPath: indexPath) as! BuyCell
             buyCell.vendor = vendor
@@ -89,7 +95,9 @@ class BuyTicketDetailTableVC: UITableViewController {
     
     func confirmAction(){
         
-        Alamofire.request(.POST, "\(Constants.domain)tickets", parameters:["ticketId":"ff","vendorId":vendor!["id"].string!])
+        let params = ["userId":"1",Constants.vendorName:vendor![Constants.vendorName].string!,"date":date,"quantity":quantity,"vendorId":vendor!["id"].string!]
+        
+        Alamofire.request(.POST, "\(Constants.domain)tickets", parameters:params)
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
@@ -99,6 +107,7 @@ class BuyTicketDetailTableVC: UITableViewController {
                 if let JSON = response.result.value {
                     print("JSON: \(JSON)")
                 }
+                
                 self.navigationController?.pushViewController(FinalBookTicketVC(), animated: true)
                 
         }

@@ -12,7 +12,9 @@ import Alamofire
 struct Constants {
     static let vendorName = "companyName"
     static let vendorLocation = "vendorLocation"
+    static let quanity = "quantity"
     static let address = "vicinity"
+    static let dateAlias = "date"
     static let ipv4 = "192.168.2.10"
     static let port = "3000"
     static let domain = "http://\(Constants.ipv4):\(Constants.port)/"
@@ -28,6 +30,13 @@ struct Constants {
         let data = NSData(contentsOfURL : url!)
         return UIImage(data: data!)
     }
+    
+    static func getDateFormatter() -> NSDateFormatter{
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        return dateFormatter
+    }
+
     
     
 }
