@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class BuyTicketDetailTableVC: UITableViewController {
     
@@ -53,8 +54,8 @@ class BuyTicketDetailTableVC: UITableViewController {
             cell = tableView.dequeueReusableCellWithIdentifier("quantityCell", forIndexPath: indexPath) as! QuantityCell
         case 2:
             let buyCell = tableView.dequeueReusableCellWithIdentifier("buyCell", forIndexPath: indexPath) as! BuyCell
-            buyCell.navigationController = navigationController
             buyCell.vendor = vendor
+            buyCell.parentTableVC = self
             cell = buyCell
         default:
             cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "reuseIdentifier")
@@ -86,7 +87,23 @@ class BuyTicketDetailTableVC: UITableViewController {
     }
     
     
-    
+    func confirmAction(){
+        
+        Alamofire.request(.POST, "\(Constants.domain)tickets", parameters:["ticketId":"ff","vendorId":vendor!["id"].string!])
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
+                self.navigationController?.pushViewController(FinalBookTicketVC(), animated: true)
+                
+        }
+
+    }
     /*
      // Override to support conditional editing of the table view.
      override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

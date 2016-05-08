@@ -11,8 +11,8 @@ import Alamofire
 
 class BuyCell: UITableViewCell {
     
-    var navigationController:UINavigationController? = nil
     var vendor: JSON?
+    var parentTableVC: BuyTicketDetailTableVC? = nil
     
     
     override func awakeFromNib() {
@@ -27,21 +27,7 @@ class BuyCell: UITableViewCell {
     }
     
     @IBAction func confirmAction(sender: AnyObject) {
+        parentTableVC?.confirmAction()
         
-        Alamofire.request(.POST, "\(Constants.domain)testPUT", parameters:["ticketId":"ff","vendorId":vendor!["id"].string!])
-            .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)   // result of response serialization
-                
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                }
-                self.navigationController?.pushViewController(FinalBookTicketVC(), animated: true)
-                
-        }
-        
-      
     }
 }
