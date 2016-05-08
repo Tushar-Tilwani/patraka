@@ -95,7 +95,7 @@ class BuyTicketDetailTableVC: UITableViewController {
     
     func confirmAction(){
         
-        let params = ["userId":"1",Constants.vendorName:vendor![Constants.vendorName].string!,"date":date,"quantity":quantity,"vendorId":vendor!["id"].string!]
+        let params = ["userId":"1",Constants.vendorName:vendor![Constants.vendorName].string!,"date":date,"quantity":quantity,"vendorId":vendor!["_id"].string!]
         
         Alamofire.request(.POST, "\(Constants.domain)tickets", parameters:params)
             .responseJSON { response in

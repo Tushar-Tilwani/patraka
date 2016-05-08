@@ -15,10 +15,11 @@ struct Constants {
     static let quanity = "quantity"
     static let address = "vicinity"
     static let dateAlias = "date"
-    static let ipv4 = "192.168.2.10"
+    static let ipv4 = "129.21.114.153"
     static let port = "3000"
     static let domain = "http://\(Constants.ipv4):\(Constants.port)/"
     static let imageDomain = "\(Constants.domain)static/images/"
+    static let _id = "_id"
     
     static func getImage(imageStr : String?) -> UIImage?  {
         var imageName = imageStr

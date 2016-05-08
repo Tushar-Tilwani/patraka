@@ -22,6 +22,11 @@
 		33186FE11CD42F75005997A9 /* BuyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33186FE01CD42F75005997A9 /* BuyCell.swift */; };
 		33186FE31CD43800005997A9 /* BuyTicketDetailTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33186FE21CD43800005997A9 /* BuyTicketDetailTableVC.swift */; };
 		332CA1751CDDB4A8008BE828 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 332CA1741CDDB4A8008BE828 /* video.mp4 */; };
+		335069441CDFCF35006C36FB /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335069431CDFCF35006C36FB /* Definitions.swift */; };
+		3350694C1CDFD849006C36FB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3350694B1CDFD849006C36FB /* MapKit.framework */; };
+		3354FD2E1CDFB4C200BF5873 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3354FD2D1CDFB4C200BF5873 /* CoreBluetooth.framework */; };
+		3354FD371CDFB60200BF5873 /* BluetoothUseTicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3354FD351CDFB60200BF5873 /* BluetoothUseTicketVC.swift */; };
+		3354FD381CDFB60200BF5873 /* BluetoothUseTicketVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3354FD361CDFB60200BF5873 /* BluetoothUseTicketVC.xib */; };
 		3380CF741CD2D9C6009640DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380CF731CD2D9C6009640DB /* AppDelegate.swift */; };
 		3380CF7B1CD2D9C6009640DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3380CF791CD2D9C6009640DB /* Main.storyboard */; };
 		3380CF7D1CD2D9C6009640DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3380CF7C1CD2D9C6009640DB /* Assets.xcassets */; };
@@ -127,6 +132,11 @@
 		33186FE01CD42F75005997A9 /* BuyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCell.swift; sourceTree = "<group>"; };
 		33186FE21CD43800005997A9 /* BuyTicketDetailTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyTicketDetailTableVC.swift; sourceTree = "<group>"; };
 		332CA1741CDDB4A8008BE828 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video.mp4; path = ../video.mp4; sourceTree = "<group>"; };
+		335069431CDFCF35006C36FB /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
+		3350694B1CDFD849006C36FB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3354FD2D1CDFB4C200BF5873 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		3354FD351CDFB60200BF5873 /* BluetoothUseTicketVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothUseTicketVC.swift; sourceTree = "<group>"; };
+		3354FD361CDFB60200BF5873 /* BluetoothUseTicketVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BluetoothUseTicketVC.xib; sourceTree = "<group>"; };
 		3380CF701CD2D9C6009640DB /* patraka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = patraka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3380CF731CD2D9C6009640DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3380CF7A1CD2D9C6009640DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,7 +161,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3354FD2E1CDFB4C200BF5873 /* CoreBluetooth.framework in Frameworks */,
 				330617721CDEB5930011AD2E /* libstdc++.6.0.9.tbd in Frameworks */,
+				3350694C1CDFD849006C36FB /* MapKit.framework in Frameworks */,
 				3306176C1CDEB58B0011AD2E /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,6 +188,7 @@
 		33186FD31CD41E7A005997A9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3354FD361CDFB60200BF5873 /* BluetoothUseTicketVC.xib */,
 				3314252B1CD6F1F20057DC8E /* FinalBookTicketVC.xib */,
 				33186FE51CD441E1005997A9 /* Cells */,
 			);
@@ -213,6 +226,8 @@
 		3380CF671CD2D9C6009640DB = {
 			isa = PBXGroup;
 			children = (
+				3350694B1CDFD849006C36FB /* MapKit.framework */,
+				3354FD2D1CDFB4C200BF5873 /* CoreBluetooth.framework */,
 				330617711CDEB5930011AD2E /* libstdc++.6.0.9.tbd */,
 				330617541CDEB5760011AD2E /* Alamofire.xcodeproj */,
 				3380CF721CD2D9C6009640DB /* patraka */,
@@ -243,6 +258,7 @@
 				3380CF7E1CD2D9C6009640DB /* LaunchScreen.storyboard */,
 				3380CF811CD2D9C6009640DB /* Info.plist */,
 				33186FD11CD41695005997A9 /* Constants.swift */,
+				335069431CDFCF35006C36FB /* Definitions.swift */,
 			);
 			path = patraka;
 			sourceTree = "<group>";
@@ -257,6 +273,7 @@
 				33186FCF1CD4105F005997A9 /* VendorDetailTableVC.swift */,
 				33186FE21CD43800005997A9 /* BuyTicketDetailTableVC.swift */,
 				3314252A1CD6F1F20057DC8E /* FinalBookTicketVC.swift */,
+				3354FD351CDFB60200BF5873 /* BluetoothUseTicketVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -317,6 +334,11 @@
 					3380CF6F1CD2D9C6009640DB = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = R3J4YR7Q69;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -410,6 +432,7 @@
 				33E501891CDC275D007F9BE9 /* about_us.png in Resources */,
 				33E5018A1CDC275D007F9BE9 /* share.png in Resources */,
 				3380CF941CD32035009640DB /* vendors.json in Resources */,
+				3354FD381CDFB60200BF5873 /* BluetoothUseTicketVC.xib in Resources */,
 				33186FD71CD42AF0005997A9 /* DateCell.xib in Resources */,
 				33186FDB1CD42EB8005997A9 /* BuyCell.xib in Resources */,
 				3380CF7B1CD2D9C6009640DB /* Main.storyboard in Resources */,
@@ -426,7 +449,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				335069441CDFCF35006C36FB /* Definitions.swift in Sources */,
 				33186FE11CD42F75005997A9 /* BuyCell.swift in Sources */,
+				3354FD371CDFB60200BF5873 /* BluetoothUseTicketVC.swift in Sources */,
 				3380CF881CD2DC16009640DB /* BookTicketsTableVC.swift in Sources */,
 				3380CF901CD2E35A009640DB /* HomeVC.swift in Sources */,
 				33186FD01CD4105F005997A9 /* VendorDetailTableVC.swift in Sources */,

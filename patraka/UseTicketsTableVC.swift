@@ -55,7 +55,17 @@ class UseTicketsTableVC: UITableViewController {
         cell.detailTextLabel?.text =  "\(date!) | \(quanity!) Tickets"
         
         return cell
-    } 
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let ticket = tickets![indexPath.row]
+        let detailVC =  BluetoothUseTicketVC()
+        detailVC.title = ticket[Constants.vendorName].string
+        detailVC.ticket = ticket
+        
+        navigationController?.pushViewController(detailVC, animated: true)
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
