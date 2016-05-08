@@ -54,6 +54,7 @@ class BuyTicketDetailTableVC: UITableViewController {
         case 2:
             let buyCell = tableView.dequeueReusableCellWithIdentifier("buyCell", forIndexPath: indexPath) as! BuyCell
             buyCell.navigationController = navigationController
+            buyCell.vendor = vendor
             cell = buyCell
         default:
             cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "reuseIdentifier")
