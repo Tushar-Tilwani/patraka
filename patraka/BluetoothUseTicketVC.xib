@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BluetoothUseTicketVC" customModule="patraka" customModuleProvider="target">
             <connections>
+                <outlet property="dateLabel" destination="Gd1-eN-QkN" id="iN2-PD-62c"/>
+                <outlet property="quantityLabel" destination="qSV-4q-xlQ" id="DGf-i8-KyN"/>
                 <outlet property="sendBtn" destination="vhu-kt-v6J" id="Wh8-bn-mbG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

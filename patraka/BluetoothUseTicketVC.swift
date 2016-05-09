@@ -19,6 +19,8 @@ class BluetoothUseTicketVC: UIViewController, CBPeripheralManagerDelegate{
     private var dataToSend: NSData?
     private var sendDataIndex: Int?
     @IBOutlet weak var sendBtn: UIButton!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var quantityLabel: UILabel!
     
     
     private var shouldSend: Bool = true;
@@ -27,10 +29,21 @@ class BluetoothUseTicketVC: UIViewController, CBPeripheralManagerDelegate{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // Start up the CBPeripheralManager
+        let date = ticket![Constants.dateAlias].string!
+        dateLabel.text = "Date: \(date)"
+        let quantity = ticket![Constants.quanity].string!
+       quantityLabel.text = "You have \(quantity) Tickets"
+        
         peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
         
     }
     
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        ticketWillSend()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -119,7 +132,7 @@ class BluetoothUseTicketVC: UIViewController, CBPeripheralManagerDelegate{
                 sendingEOM = false
                 
                 print("Sent: EOM")
-                self.ticketSend()
+                self.ticketDidSend()
             }
             
             // It didn't send, so we'll exit and wait for peripheralManagerIsReadyToUpdateSubscribers to call sendData again
@@ -195,7 +208,7 @@ class BluetoothUseTicketVC: UIViewController, CBPeripheralManagerDelegate{
                     // It sent, we're all done
                     sendingEOM = false
                     print("Sent: EOM")
-                    self.ticketSend()
+                    self.ticketDidSend()
                 }
                 
                 return
@@ -213,25 +226,26 @@ class BluetoothUseTicketVC: UIViewController, CBPeripheralManagerDelegate{
     /** Start advertising
      */
     @IBAction func sendBtnAction(sender: AnyObject) {
-        
-        //sendBtn.setTitle("Stop", forState: UIControlState.Normal)
-        //peripheralManager?.stopAdvertising()
-        
-        peripheralManager!.startAdvertising([CBAdvertisementDataServiceUUIDsKey : [transferServiceUUID]])
-        sendBtn.setTitle("Sending Ticket...", forState: UIControlState.Normal)
-        sendBtn.enabled = false
-        
+       self.ticketWillSend()
     }
     func peripheralManagerDidStartAdvertising(peripheral: CBPeripheralManager, error: NSError?) {
         print(error)
     }
     
-    func ticketSend(){
+    func ticketDidSend(){
         sendBtn.setTitle("Start", forState: UIControlState.Normal)
         peripheralManager?.stopAdvertising()
         sendBtn.enabled = true
         //self.navigationController?.popViewControllerAnimated(true)
+        UIControl().sendAction(#selector(NSURLSessionTask.suspend), to: UIApplication.sharedApplication(), forEvent: nil)
     }
+    
+    func ticketWillSend(){
+        sendBtn.setTitle("Sending Ticket...", forState: UIControlState.Normal)
+        sendBtn.enabled = false
+        peripheralManager!.startAdvertising([CBAdvertisementDataServiceUUIDsKey : [transferServiceUUID]])
+    }
+
     
     
 }

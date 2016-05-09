@@ -11,8 +11,10 @@ import AVKit
 import AVFoundation
 
 class HomeVC: UIViewController {
-     var player: AVPlayer?
-
+    var player: AVPlayer?
+    var playerLayer : AVPlayerLayer?
+    
+    @IBOutlet weak var uiview: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,24 +27,38 @@ class HomeVC: UIViewController {
         player?.actionAtItemEnd = .None
         player?.muted = true
         
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        playerLayer.zPosition = -1
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer!.videoGravity = AVLayerVideoGravityResizeAspectFill
+        playerLayer!.zPosition = -1
         
-        playerLayer.frame = view.frame
+        let width = UIScreen.mainScreen().bounds.size.width
+        let height = UIScreen.mainScreen().bounds.size.height
         
-        view.layer.addSublayer(playerLayer)
-        
+        playerLayer!.frame = CGRectMake(0, 20, width, height)
+        view.layer.addSublayer(playerLayer!)
         player?.play()
+        
+        
         
         //loop video
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(HomeVC.loopVideo),
                                                          name: AVPlayerItemDidPlayToEndTimeNotification,
                                                          object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeVC.rotated), name: UIDeviceOrientationDidChangeNotification, object: nil)
+        
+        
+       
         // Do any additional setup after loading the view.
     }
-
+    
+    func rotated(){
+        let width = UIScreen.mainScreen().bounds.size.width
+        let height = UIScreen.mainScreen().bounds.size.height
+        
+        playerLayer!.frame = CGRectMake(0, 20, width, height)
+    }
+    
     func loopVideo() {
         player?.seekToTime(kCMTimeZero)
         player?.play()
@@ -52,15 +68,15 @@ class HomeVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
