@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Alamofire
 
 class BookTicketsTableVC: UITableViewController {
     
     var vendors: JSON? = []
+    var isLoaded:Bool = false
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -100,19 +102,21 @@ class BookTicketsTableVC: UITableViewController {
         let url = "\(Constants.domain)dummy_vendors"
         print(url)
         
-        let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: url)!, completionHandler: { (data, response, error) -> Void in
-            do{
-                if(data != nil){
-                    self.vendors = JSON(data: data!)
-                    self.afterLoad()
-                } else {
+        
+        Alamofire.request(.GET, url)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .Success:
+                    if let json = response.result.value {
+                        self.vendors = JSON(json)
+                        self.afterLoad()
+                    }
+                case .Failure( _):
                     self.showAlert("No Internet Connection!")
                     self.afterLoad()
                 }
-                
-            }
-        })
-        task.resume()
+        }
         
     }
     

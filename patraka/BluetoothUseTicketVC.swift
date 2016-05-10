@@ -236,8 +236,8 @@ class BluetoothUseTicketVC: UIViewController, CBPeripheralManagerDelegate{
         sendBtn.setTitle("Start", forState: UIControlState.Normal)
         peripheralManager?.stopAdvertising()
         sendBtn.enabled = true
-        //self.navigationController?.popViewControllerAnimated(true)
-        UIControl().sendAction(#selector(NSURLSessionTask.suspend), to: UIApplication.sharedApplication(), forEvent: nil)
+        self.navigationController?.popViewControllerAnimated(true)
+        //UIControl().sendAction(#selector(NSURLSessionTask.suspend), to: UIApplication.sharedApplication(), forEvent: nil)
     }
     
     func ticketWillSend(){
